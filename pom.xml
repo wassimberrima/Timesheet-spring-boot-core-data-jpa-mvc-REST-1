@@ -88,11 +88,11 @@
 <distributionManagement>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://localhost:8088/repository/maven-snapshots/</url>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>deploymentRepo</id>
-      <url>http://localhost:8088/repository/timesheet/</url>
+      <url>http://localhost:8081/repository/timesheet/</url>
     </repository>
   </distributionManagement>
 </project>

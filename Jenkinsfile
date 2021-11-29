@@ -1,21 +1,21 @@
 pipeline {
     environment
 {
-registry = "saharesprit1/timesheet"
-registryCredential= 'saharesprit1'
+registry = "wassim1/timesheet"
+registryCredential= 'wassim1'
 dockerImage = ''
 }
     agent any
     tools {
         maven "Maven"
-        jdk "Java 8 "
+        jdk "Java 8"
     }
     stages {
 
         stage('clone git repo'){
             steps {
                 bat "if exist build rmdir /s /q build"
-                bat "git clone https://github.com/bh-oussama97/TimeSheetProject.git ./build"
+                bat "git clone https://github.com/wassimberrima/Timesheet-spring-boot-core-data-jpa-mvc-REST-1.git ./build"
             }
         }
        
@@ -75,10 +75,10 @@ dockerImage = ''
         }
         post {
             success {
-                emailext body: 'build success' ,subject:'Jenkins' , to : 'sahar.gharbi@esprit.tn'
+                emailext body: 'build success' ,subject:'Jenkins' , to : 'medwassim.berrima@esprit.tn'
             }
             failure {
-                emailext body: 'build failure' ,subject:'Jenkins' , to : 'sahar.gharbi@esprit.tn'
+                emailext body: 'build failure' ,subject:'Jenkins' , to : 'medwassim.berrima@esprit.tn'
             }
         }
         }
